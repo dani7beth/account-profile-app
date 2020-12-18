@@ -9,10 +9,15 @@ export const AccountConsumer = AccountContext.Consumer;
 
 class AccountProvider extends React.Component {
   state = {
-    userName:'Fooman',
+    username:'Fooman',
     dateJoined: "12/23/34",
-    membershipLevel: "Silver"
+    membershipLevel: "Silver",
+    updateAccount: (account) => this.updateAccount(account),
   };
+
+  updateAccount = (account) =>{
+    this.setState({...account});
+  }
 
   render(){
     return(
